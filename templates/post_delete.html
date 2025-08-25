@@ -1,0 +1,17 @@
+<!-- templates/post_new.html -->
+{% extends "base.html" %} {% block content %}
+<h1>Edit Post</h1>
+<form
+	action=""
+	method="post"
+	class="form-container">
+    {% csrf_token %}
+	{{ form.as_p }}
+    <p>Are you sure you want to delete this post?</p>
+	<input
+		type="submit"
+		class="btn-submit"
+		value="Confirm" />
+</form>
+	{% endblock %}
+
