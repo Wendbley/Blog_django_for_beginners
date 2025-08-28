@@ -11,6 +11,7 @@ fastkml==1.1.0
 filelock==3.19.1
 future==1.0.0
 geojson==3.2.0
+gunicorn==23.0.0
 iso8601==2.1.0
 mypy_extensions==1.1.0
 packaging==25.0
@@ -29,3 +30,4 @@ types-python-dateutil==2.9.0.20250822
 typing_extensions==4.14.1
 tzdata==2025.2
 virtualenv==20.34.0
+whitenoise==6.9.0
