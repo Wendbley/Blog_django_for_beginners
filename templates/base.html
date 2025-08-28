@@ -1,23 +1,39 @@
 {% load static %}
 <html>
-    <head>
-        <title>Message Board Homepage</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    </head>
-    <body>
-      <header>
-        <div class="nav-left">
-        <h1><a href="{% url 'home' %}">Message Board Homepage</a></h1>
-        </div>
-        <div class="nav-right">
-          <a href="{% url 'post_new' %}">+New Post</a>
-          </div>
-      </header>
-
-      <div class="container">
-        {% block content %}
-        {% endblock %}
-        </div>
-      </body>
-      </html>
+	<head>
+		<title>Message Board Homepage</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'css/styles.css' %}" />
+	</head>
+	<body>
+		<header>
+			<div class="nav-left">
+				<h1><a href="{% url 'home' %}">Message Board Homepage</a></h1>
+			</div>
+			<div class="nav-right">
+				<a href="{% url 'post_new' %}">+ New Post</a>
+			</div>
+		</header>
+		<div class="container">
+			{% if user.is_authenticated %}
+			<p>Hi {{ user.username }}!</p>
+			<form
+				action="{% url 'logout' %}"
+				method="post">
+				{% csrf_token %}
+				<button type="submit">Log Out</button>
+			</form>
+			{% else %}
+			<p>Your are not logged in.</p>
+			<p>
+				<a href="{% url 'login' %}">Login</a> | <a href="{% url 'signup' %}">Sign Up</a>
+			</p>
+			{% endif %} {% block content %} {% endblock %}
+		</div>
+	</body>
+</html>
