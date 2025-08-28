@@ -3,7 +3,7 @@ services:
     name: django-app
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn django_project.wsgi
+    startCommand: gunicorn django_project.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: django_project.settings
@@ -11,3 +11,4 @@ services:
         value: django-insecure-=j@pcr&jj5z+xiajx5=+#zs-t^j3)6(dcbp)@yz7z#*amg%$uq
 
       
+
