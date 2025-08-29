@@ -21,7 +21,7 @@
 		</header>
 		<div class="container">
 			{% if user.is_authenticated %}
-			<p>Hi {{ user.username }}!</p>
+			<p>Hi {{ user.username }}! You are {{ user.age }} years old. </p>
 			<form
 				action="{% url 'logout' %}"
 				method="post">
