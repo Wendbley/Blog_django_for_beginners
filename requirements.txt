@@ -4,8 +4,10 @@ black==25.1.0
 certifi==2025.8.3
 click==8.2.1
 colorama==0.4.6
+crispy-bootstrap5==2025.6
 distlib==0.4.0
 Django==5.2.5
+django-crispy-forms==2.4
 djangorestframework==3.16.1
 fastkml==1.1.0
 filelock==3.19.1
