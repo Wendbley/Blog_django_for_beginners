@@ -44,7 +44,7 @@
 				</div>
 			</div>
 		</header>
-		<div class="container">
+		{% comment %} <div class="container">
 			{% if user.is_authenticated %}
 			<p>Hi {{ user.username }}! You are {{ user.age }} years old. </p>
 			<form
@@ -58,8 +58,8 @@
 			<p>
 				<a href="{% url 'login' %}">Login</a> | <a href="{% url 'signup' %}">Sign Up</a>
 			</p>
-		</div>
-		<main>{% endif %} {% block content %} {% endblock %}</main>
+		</div> {% endif %}{% endcomment %}
+		<main> {% block content %} {% endblock %}</main>
 		</div>
 		<!-- Bootstrap JS Bundle with Popper: JavaScript Bundele -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
